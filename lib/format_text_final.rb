@@ -9,7 +9,7 @@ class Format_text_finaly
         file_contents = space_reducer(file_contents)
         check_line_length(file_contents)
         file_contents = blank_remover(file_contents)
-        puts file_contents
+        # puts file_contents
         return file_contents
     end
 
@@ -38,13 +38,13 @@ class Format_text_finaly
         #should keep the first 80 char on the curr line and move the rest to the next line
         if(file_contents[first_line_idx][79] === " " || file_contents[first_line_idx][80] === " ")
             mode = 0;
-            puts mode
+            # puts mode
         elsif(file_contents[first_line_idx][79] != " " && file_contents[first_line_idx][80] != " " && file_contents[first_line_idx].include?(" "))
             mode = 1
-            puts mode
+            # puts mode
         elsif(!file_contents[first_line_idx].include?(" "))
             mode = 2;
-            puts mode
+            # puts mode
         end
 
         case mode
