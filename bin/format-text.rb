@@ -17,7 +17,11 @@ if(ARGV.length > 0)
             end
         end
     elsif(ARGV.include?("--history"))
-        Dir.each_child(directory_name) {|file| puts file}
+        if(File.exists?(directory_name))
+            Dir.each_child(directory_name) {|file| puts file}
+        else
+            puts "You haven't formatted any files today"
+        end
     else
         new_file = Format_text_finaly.new
         puts new_file.format_text(ARGV[0])
